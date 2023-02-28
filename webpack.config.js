@@ -1,5 +1,4 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
@@ -11,14 +10,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.less'],
-  },
-  devServer: {
-    open: true,
-    // static: {
-    //   directory: path.resolve(__dirname, 'docs'),
-    // },
-    compress: true,
-    port: 8080,
   },
   module: {
     rules: [
@@ -51,10 +42,5 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-    }),
-  ],
+  plugins: [new CleanWebpackPlugin()],
 };
