@@ -1,7 +1,13 @@
 import React, { memo } from 'react';
+import Header from '../../layout/header';
 
 const Home: React.FC = () => {
-  return <div> Home</div>;
+  return (
+    <div>
+      <Header></Header>
+      Home
+    </div>
+  );
 };
 
 export default memo(Home);
