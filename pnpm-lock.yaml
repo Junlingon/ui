@@ -24,6 +24,7 @@ specifiers:
   eslint-plugin-react-hooks: ^4.6.0
   html-webpack-plugin: ^5.5.0
   husky: ^8.0.3
+  less-loader: ^11.1.0
   lint-staged: ^13.1.0
   path-browserify: ^1.0.1
   pnpm: ^7.26.3
@@ -82,6 +83,7 @@ devDependencies:
   eslint-plugin-react-hooks: 4.6.0_eslint@8.33.0
   html-webpack-plugin: 5.5.0_webpack@5.75.0
   husky: 8.0.3
+  less-loader: 11.1.0_webpack@5.75.0
   lint-staged: 13.1.0
   postcss: 8.4.21
   postcss-loader: 7.0.2_6jdsrmfenkuhhw3gx4zvjlznce
@@ -5076,6 +5078,17 @@ packages:
 
   /known-css-properties/0.26.0:
     resolution: {integrity: sha512-5FZRzrZzNTBruuurWpvZnvP9pum+fe0HcK8z/ooo+U+Hmp4vtbyp1/QDsqmufirXy4egGzbaH/y2uCZf+6W5Kg==}
+    dev: true
+
+  /less-loader/11.1.0_webpack@5.75.0:
+    resolution: {integrity: sha512-C+uDBV7kS7W5fJlUjq5mPBeBVhYpTIm5gB09APT9o3n/ILeaXVsiSFTbZpTJCJwQ/Crczfn3DmfQFwxYusWFug==}
+    engines: {node: '>= 14.15.0'}
+    peerDependencies:
+      less: ^3.5.0 || ^4.0.0
+      webpack: ^5.0.0
+    dependencies:
+      klona: 2.0.6
+      webpack: 5.75.0_webpack-cli@5.0.1
     dev: true
 
   /leven/2.1.0:
