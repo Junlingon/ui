@@ -3,7 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'production',
-  entry: './src/index.tsx',
+  entry: './src/index.ts',
   output: {
     filename: 'ui.js',
     path: path.resolve(__dirname, 'packages'),

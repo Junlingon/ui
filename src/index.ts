@@ -1,2 +1,1 @@
-import React from 'react';
-export const a = 1;
+import './style/index.less';
