@@ -2,7 +2,7 @@ import React, { createContext, memo, useState } from 'react';
 import { IMenuContext, MenuProps } from './type';
 import classNames from 'classnames';
 
-export const MenuContext = createContext<IMenuContext>({ index: 0 });
+const MenuContext = createContext<IMenuContext>({ index: 0 });
 
 const Menu: React.FC<MenuProps> = (props) => {
   const { defaultIndex, className, mode, style, onSelect, children } = props;

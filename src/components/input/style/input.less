@@ -1,0 +1,306 @@
+.mi-input-view {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--mi-form-bgcolor);
+  border: var(--mi-form-border-width) var(--mi-form-border-color) solid;
+  border-radius: var(--mi-border-radius);
+  transition: var(--mi-form-transition);
+
+  input,
+  textarea {
+    box-sizing: border-box;
+    width: 100%;
+    color: var(--mi-text-color-2);
+    text-overflow: ellipsis;
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  input {
+    overflow: hidden;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: rgb(165 165 165);
+  }
+
+  .mi-input-controls {
+    display: inline-flex;
+    align-items: center;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: var(--mi-form-transition);
+
+    > div {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      min-width: 30px;
+      padding: 0 5px;
+      white-space: nowrap;
+      opacity: 0.7;
+      transition: var(--mi-form-transition);
+      user-select: none;
+    }
+
+    .mi-input-clear {
+      cursor: pointer;
+    }
+
+    .mi-input-show-password {
+      cursor: pointer;
+    }
+
+    > div:hover {
+      opacity: 1;
+    }
+  }
+
+  .mi-input-controls-show {
+    transform: translateX(0);
+    opacity: 0.8;
+  }
+}
+
+.mi-input-view-align-left {
+  input,
+  textarea {
+    text-align: left;
+  }
+}
+
+.mi-input-view-align-center {
+  input,
+  textarea {
+    text-align: center;
+  }
+}
+
+.mi-input-view-align-right {
+  input,
+  textarea {
+    text-align: right;
+  }
+}
+
+.mi-input-view-auto-width {
+  position: relative;
+  width: auto;
+
+  input {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+
+  .input-auto-width {
+    box-sizing: border-box;
+    width: auto;
+    min-width: 65px;
+    height: 100%;
+    visibility: hidden;
+  }
+}
+
+.mi-input-view-small {
+  input,
+  textarea {
+    padding: var(--mi-form-input-padding-small);
+    font-size: var(--mi-form-font-size-small);
+    line-height: var(--mi-form-input-line-height-small);
+  }
+
+  input {
+    height: var(--mi-form-item-height-small);
+  }
+
+  textarea {
+    min-height: var(--mi-form-item-height-small);
+  }
+
+  .mi-input-controls {
+    height: var(--mi-form-item-height-small);
+  }
+
+  .input-auto-width {
+    height: var(--mi-form-item-height-small);
+    padding: var(--mi-form-input-padding-small);
+    font-size: var(--mi-form-font-size-small);
+    line-height: var(--mi-form-input-line-height-small);
+  }
+}
+
+.mi-input-view-medium {
+  input,
+  textarea {
+    padding: var(--mi-form-input-padding-medium);
+    font-size: var(--mi-form-font-size-medium);
+    line-height: var(--mi-form-input-line-height-medium);
+  }
+
+  input {
+    height: var(--mi-form-item-height-medium);
+  }
+
+  textarea {
+    min-height: var(--mi-form-item-height-medium);
+  }
+
+  .mi-input-controls {
+    height: var(--mi-form-item-height-medium);
+  }
+
+  .input-auto-width {
+    height: var(--mi-form-item-height-medium);
+    padding: var(--mi-form-input-padding-medium);
+    font-size: var(--mi-form-font-size-medium);
+    line-height: var(--mi-form-input-line-height-medium);
+  }
+}
+
+.mi-input-view-large {
+  input,
+  textarea {
+    padding: var(--mi-form-input-padding-large);
+    font-size: var(--mi-form-font-size-large);
+    line-height: var(--mi-form-input-line-height-large);
+  }
+
+  input {
+    height: var(--mi-form-item-height-large);
+  }
+
+  textarea {
+    min-height: var(--mi-form-item-height-large);
+  }
+
+  .mi-input-controls {
+    height: var(--mi-form-item-height-large);
+  }
+
+  .input-auto-width {
+    height: var(--mi-form-item-height-large);
+    padding: var(--mi-form-input-padding-large);
+    font-size: var(--mi-form-font-size-large);
+    line-height: var(--mi-form-input-line-height-large);
+  }
+}
+
+.mi-input-view-textarea {
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+
+  .mi-input-controls {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    height: 18px;
+    background: var(--mi-form-bgcolor);
+    border-radius: 2px;
+  }
+
+  .mi-input-controls-show {
+    transform: translateY(0);
+  }
+
+  .mi-textarea-resize-none {
+    resize: none;
+  }
+
+  .mi-textarea-resize-horizontal {
+    resize: horizontal;
+  }
+
+  .mi-textarea-resize-vertical {
+    resize: vertical;
+  }
+
+  .mi-textarea-resize-both {
+    resize: both;
+  }
+
+  .mi-textarea-resize-inline {
+    resize: inline;
+  }
+}
+
+.mi-input-view:hover {
+  background-color: var(--mi-form-bgcolor-hover);
+  border: var(--mi-form-border-width) var(--mi-form-border-color-hover) solid;
+
+  .mi-input-controls {
+    background: var(--mi-form-bgcolor-hover);
+  }
+}
+
+.mi-input-view:active {
+  background-color: var(--mi-form-bgcolor-active);
+}
+
+.mi-input-view:focus-within {
+  background-color: var(--mi-form-bgcolor-focus);
+  border: var(--mi-form-border-width) var(--mi-form-border-color-focus) solid;
+
+  .mi-input-controls {
+    background: var(--mi-form-bgcolor-focus);
+  }
+}
+
+.mi-input-view-readonly {
+  background-color: var(--mi-form-bgcolor);
+  border: var(--mi-form-border-width) rgb(0 0 0 / 0%) solid;
+  cursor: default;
+
+  input {
+    user-select: auto;
+  }
+}
+
+.mi-input-view-readonly:hover {
+  background-color: var(--mi-form-bgcolor);
+  border: var(--mi-form-border-width) rgb(0 0 0 / 0%) solid;
+}
+
+.mi-input-view-readonly:active {
+  background-color: var(--mi-form-bgcolor);
+  border: var(--mi-form-border-width) rgb(0 0 0 / 0%) solid;
+}
+
+.mi-input-view-readonly:focus-within {
+  background-color: var(--mi-form-bgcolor);
+  border: var(--mi-form-border-width) rgb(0 0 0 / 0%) solid;
+}
+
+.mi-input-view-disabled {
+  background-color: var(--mi-form-bgcolor);
+  border: var(--mi-form-border-width) rgb(0 0 0 / 0%) solid;
+  cursor: no-drop;
+  opacity: var(--mi-disabled-opacity);
+}
+
+.mi-input-view-disabled:hover {
+  background-color: var(--mi-form-bgcolor);
+  border: var(--mi-form-border-width) rgb(0 0 0 / 0%) solid;
+}
+
+.mi-input-view-disabled:active {
+  background-color: var(--mi-form-bgcolor);
+  border: var(--mi-form-border-width) rgb(0 0 0 / 0%) solid;
+}
+
+.mi-input-view-disabled:focus-within {
+  background-color: var(--mi-form-bgcolor);
+  border: var(--mi-form-border-width) rgb(0 0 0 / 0%) solid;
+}
