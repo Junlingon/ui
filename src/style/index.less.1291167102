@@ -1,0 +1,68 @@
+/* config */
+@import url('./variables.less');
+
+/* layout */
+@import url('./reboot.less');
+
+/* button */
+@import url('../components/button/style/button.less');
+
+/* menu */
+@import url('../components/menu/style/menu.less');
+
+/* title */
+@import url('../components/title/style/title.less');
+
+/* flex */
+@import url('../components/flex/style/index.less');
+
+/* badge */
+@import url('../components/badge/style/badge.less');
+
+/* avatar */
+@import url('../components/avatar/style/avatar.less');
+
+/* tag */
+@import url('../components/tag/style/tag.less');
+
+/* breadcrumb */
+@import url('../components/breadcrumb/style/breadcrumb.less');
+
+/* tabs */
+@import url('../components/tabs/style/tabs.less');
+
+/* dropdown */
+@import url('../components/dropdown/style/dropdown.less');
+
+/* popover */
+@import url('../components/popover/style/popover.less');
+
+/* form */
+@import url('../components/form/style/form.less');
+
+/* input */
+@import url('../components/input/style/input.less');
+
+/* radio */
+@import url('../components/radio/style/radio.less');
+
+/* radiogroup */
+@import url('../components/radio/style/radiogroup.less');
+
+/* checkbox */
+@import url('../components/checkbox/style/checkbox.less');
+
+/* radiogroup */
+@import url('../components/checkbox/style/checkboxgroup.less');
+
+/* input-tag */
+@import url('../components/input-tag/style/input-tag.less');
+
+/* switch */
+@import url('../components/switch/style/switch.less');
+
+/* alert */
+@import url('../components/alert/style/alert.less');
+
+/* select */
+@import url('../components/select/style/select.less');
