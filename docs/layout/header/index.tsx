@@ -45,7 +45,7 @@ const Header: React.FC = () => {
       </div>
       <div className={'right'}>
         <Link to={'/'}>{t('home')}</Link>
-        <Link to={'/doc'}>{t('doc')}</Link>
+        <Link to={'/doc/button'}>{t('doc')}</Link>
         <Button onClick={changeLang}>{pre_name}</Button>
         <Tabs
           round='round'
