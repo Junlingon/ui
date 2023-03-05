@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import classNames from 'classnames';
 import { BadgeProps } from './type';
 
-const Badge: React.FC<BadgeProps> = (props) => {
+export const Badge: React.FC<BadgeProps> = (props) => {
   const { className, children, round, type, value, ...restProps } = props;
 
   const classes = classNames('mi-badge', className, {
