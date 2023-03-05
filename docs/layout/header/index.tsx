@@ -9,10 +9,10 @@ import { useTranslation } from 'react-i18next';
 
 const Header: React.FC = () => {
   const handleModule = (e: string) => {
-    if (e === 'light') {
-      document.body.classList.add('mi-dark');
-    } else {
+    if (e === 'Light') {
       document.body.classList.remove('mi-dark');
+    } else {
+      document.body.classList.add('mi-dark');
     }
   };
 
@@ -44,8 +44,8 @@ const Header: React.FC = () => {
         </div>
       </div>
       <div className={'right'}>
-        <Link to={'/home'}>{t('home')}</Link>
-        <Link to={'/Doc'}>{t('doc')}</Link>
+        <Link to={'/'}>{t('home')}</Link>
+        <Link to={'/doc'}>{t('doc')}</Link>
         <Button onClick={changeLang}>{pre_name}</Button>
         <Tabs
           round='round'

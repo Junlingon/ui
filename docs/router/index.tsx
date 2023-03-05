@@ -11,7 +11,7 @@ export const router = createHashRouter([
     element: <Main />,
     children: [
       {
-        path: '/',
+        path: '',
         element: <Home />,
         children: [],
       },
