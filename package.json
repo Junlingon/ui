@@ -2,6 +2,11 @@
   "name": "ui",
   "version": "1.0.0",
   "description": "a react ui libiary.",
+  "author": "Junlingon",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Junlingon/ui.git"
+  },
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --config ./docs/webpack.config.js --mode development",
