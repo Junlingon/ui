@@ -2,16 +2,19 @@ import React, { memo } from 'react';
 import classNames from 'classnames';
 import { RadioProps } from './type';
 
-const Radio: React.FC<RadioProps> = (props) => {
-  const { className, size, label, block, iconable, checked, ...restProps } = props;
+export const Radio: React.FC<RadioProps> = (props) => {
+  const { className, size, label, iconable, checked, onChange, key, ...restProps } = props;
 
   const classesLabel = `
-    ${block ? 'mi--radio-block' : ''}
     ${checked ? 'mi-radio-checked' : ''}
     ${size ? 'mi-radio-' + size : ''}
     ${!iconable ? 'mi-radio-unicon' : ''}
     `;
   const classes = classNames('mi-radio', className, classesLabel);
+
+  const handleChange = () => {
+    onChange();
+  };
 
   return (
     <label className={classes} {...restProps}>
@@ -20,14 +23,19 @@ const Radio: React.FC<RadioProps> = (props) => {
           <div className='icon-radio'></div>
         </div>
       ) : null}
-      <input type='radio' defaultChecked={checked} style={{ display: 'none' }} />
+      <input
+        style={{ display: 'none' }}
+        type='radio'
+        value={key}
+        checked={checked}
+        onChange={handleChange}
+      />
       {label ? <span className='mi-radio-label'> {label}</span> : null}
     </label>
   );
 };
 
 Radio.defaultProps = {
-  block: false,
   iconable: true,
   size: 'medium',
 };
