@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import { MenuItemProps } from './type';
 import classNames from 'classnames';
 import { MenuContext } from './menu';
+import { useTranslation } from 'react-i18next';
 
 const MenuItem: React.FC<MenuItemProps> = (props) => {
   const { index, disabled, className, style, children } = props;
@@ -19,9 +20,10 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
     'is-disabled': disabled,
   });
 
+  const { t } = useTranslation(); // 加载组件
   return (
     <li className={classes} style={style} onClick={handleClick}>
-      {children}
+      {t(`${children}`)}
     </li>
   );
 };
