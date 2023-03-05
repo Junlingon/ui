@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import classNames from 'classnames';
 import { FormProps } from './type';
 
-const Form: React.FC<FormProps> = (props) => {
+export const Form: React.FC<FormProps> = (props) => {
   const { className, width, children, ...restProps } = props;
 
   const classes = classNames('mi-form', className);

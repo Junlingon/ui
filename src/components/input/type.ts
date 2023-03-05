@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 export interface InputProps {
   className?: string;
   type?: string;
@@ -14,5 +13,9 @@ export interface InputProps {
   showCount?: boolean;
   niceCount?: boolean;
   autoWidth?: boolean;
+  isFocus?: boolean;
+  onFocus?: (e: any) => void;
+  onBlur?: (e: any) => void;
+  onChange?: (e: any) => void;
   resize?: string;
 }

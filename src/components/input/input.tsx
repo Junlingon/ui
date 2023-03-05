@@ -1,18 +1,23 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { InputProps } from './type';
 
-const Input: React.FC<InputProps> = (props) => {
+export const Input: React.FC<InputProps> = (props) => {
   const {
     className,
     size,
     type,
     readonly,
+    onBlur,
+    modelValue,
     disabled,
     resize,
+    onFocus,
+    onChange,
     align,
     placeholder,
     autoWidth,
+    isFocus,
     ...restProps
   } = props;
 
@@ -26,11 +31,33 @@ const Input: React.FC<InputProps> = (props) => {
     `;
   const classes = classNames('mi-input-view', className, classesDiv);
   const classesTex = classNames('btf-scrollbar', `mi-textarea-resize-${resize}`);
+  const [inputValue, setInputValue] = useState(modelValue);
+
+  let lewTextareaRef;
+  let lewInputRef;
+  const focusFn = (e: boolean | undefined) => {
+    if (e) {
+      {
+        if (type == 'textarea') {
+          lewTextareaRef?.focus();
+        } else {
+          lewInputRef?.focus();
+        }
+      }
+    }
+  };
+  useEffect(() => {
+    focusFn(isFocus);
+  });
+
   return (
     <div className={classes} {...restProps}>
       {type == 'textarea' ? (
         <textarea
           className={classesTex}
+          ref={(el) => {
+            lewTextareaRef = el;
+          }}
           rows={3}
           cols={3}
           disabled={disabled}
@@ -38,8 +65,22 @@ const Input: React.FC<InputProps> = (props) => {
           placeholder={placeholder}
         ></textarea>
       ) : (
-        <input type='text' disabled={disabled} placeholder={placeholder} />
+        <input
+          type='text'
+          disabled={disabled}
+          placeholder={placeholder}
+          onChange={(e) => {
+            setInputValue(e.target.value);
+            onChange && onChange(e.target.value);
+          }}
+          ref={(el) => {
+            lewInputRef = el;
+          }}
+          onFocus={onFocus}
+          onBlur={onBlur}
+        />
       )}
+      {autoWidth ? <label className='input-auto-width'>{inputValue}</label> : null}
     </div>
   );
 };
@@ -50,13 +91,10 @@ Input.defaultProps = {
   size: 'medium',
   align: 'left',
   disabled: false,
-  clearable: false,
   placeholder: '请输入',
   readonly: false,
-  showPassword: false,
-  showCount: false,
-  niceCount: false,
   autoWidth: false,
+  isFocus: false,
   resize: 'none',
 };
 
