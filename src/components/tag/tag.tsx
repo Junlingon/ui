@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { TagProps } from './type';
 import { MiIcon } from '../icon/icon';
 
-const Tag: React.FC<TagProps> = (props) => {
+export const Tag: React.FC<TagProps> = (props) => {
   const {
     className,
     size,
@@ -14,6 +14,7 @@ const Tag: React.FC<TagProps> = (props) => {
     bold,
     children,
     round,
+    handleClick,
     closable,
     ...restProps
   } = props;
@@ -44,7 +45,9 @@ const Tag: React.FC<TagProps> = (props) => {
       <div className='mi-tag-left'></div>
       <div className='mi-tag-value'>{children}</div>
       <div className='mi-tag-right'></div>
-      <div className='mi-tag-close'>{closable ? <MiIcon.X size={getSize()} /> : null}</div>
+      <div className='mi-tag-close'>
+        {closable ? <MiIcon.X size={getSize()} onClick={handleClick} /> : null}
+      </div>
     </div>
   );
 };
