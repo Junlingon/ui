@@ -1,6 +1,7 @@
 import React, { memo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import confetti from 'canvas-confetti';
+import { useTranslation } from 'react-i18next';
 
 import {
   user,
@@ -76,10 +77,11 @@ const Home: React.FC = () => {
     }, 300);
   }, []);
   const navigate = useNavigate();
+  const { t } = useTranslation(); // 加载组件
   return (
     <div className={'homewrapper'}>
       <div className={'startbox'}>
-        <div className={'slogan'}>构建属于你的</div>
+        <div className={'slogan'}>{t('Build yours')}</div>
         <p style={{ margin: '10px' }}>一个 React 组件库</p>
         <Button
           btnType='primary'
