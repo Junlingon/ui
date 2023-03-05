@@ -3,18 +3,15 @@ import React, { memo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './header.less';
 import myImg from '../../assets/logo.png';
-import { Button } from '../../../src/';
+import { Button, Tabs } from '../../../src/';
 import i18n from '../../react-i18next-config';
 import { useTranslation } from 'react-i18next';
 
 const Header: React.FC = () => {
-  const [themeMode, setThemeMode] = useState('light');
-  const handleModule = () => {
-    if (themeMode === 'light') {
-      setThemeMode('mi-dark');
+  const handleModule = (e: string) => {
+    if (e === 'light') {
       document.body.classList.add('mi-dark');
     } else {
-      setThemeMode('light');
       document.body.classList.remove('mi-dark');
     }
   };
@@ -48,9 +45,19 @@ const Header: React.FC = () => {
       </div>
       <div className={'right'}>
         <Link to={'/home'}>{t('home')}</Link>
-        <Link to={'/Doc'}>Doc</Link>
-        <Button onClick={handleModule}>{themeMode}</Button>
+        <Link to={'/Doc'}>{t('doc')}</Link>
         <Button onClick={changeLang}>{pre_name}</Button>
+        <Tabs
+          round='round'
+          itemWidth='40px'
+          change={(e) => {
+            handleModule(e.label);
+          }}
+          options={[
+            { label: 'Light', value: '1' },
+            { label: 'Dark', value: '2' },
+          ]}
+        ></Tabs>
       </div>
     </div>
   );
