@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 export interface CheckboxProps {
+  onChange?: (checked: boolean) => void;
   label: string;
   block?: boolean;
   iconable?: boolean;
@@ -9,6 +10,8 @@ export interface CheckboxProps {
   children?: ReactNode;
   className?: string;
   disabled?: boolean;
+  handleChange: (e: any) => void;
+  updateModelValue: (e: any) => void;
 }
 
 type Options = {
@@ -16,11 +19,12 @@ type Options = {
   value: string | number;
 };
 export interface CheckboxGroupProps {
-  modelvalue?: Array<any>;
+  onChange?: (value: any) => void;
+  value?: Array<string | number>;
   block?: boolean;
   iconable?: boolean;
   options: Options[];
-  direction?: string;
+  direction?: 'x' | 'y';
   size?: string;
   round?: boolean;
   children?: ReactNode;

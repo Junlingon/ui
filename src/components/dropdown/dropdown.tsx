@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { DropdownProps, DropdownOptions } from './type';
 import { Popover } from '../popover';
 
-const Dropdown: React.FC<DropdownProps> = (props) => {
+export const Dropdown: React.FC<DropdownProps> = (props) => {
   const {
     className,
     children,
@@ -13,6 +13,7 @@ const Dropdown: React.FC<DropdownProps> = (props) => {
     maxHeight,
     align,
     placement,
+    handleClick,
     ...restProps
   } = props;
 
@@ -21,7 +22,14 @@ const Dropdown: React.FC<DropdownProps> = (props) => {
       <div className='mi-dropdown-body' style={{ width: `${width}`, maxHeight: `${maxHeight}` }}>
         {arr.map((item, index) => {
           return (
-            <div key={index} className='mi-dropdown-option' style={{ textAlign: align }}>
+            <div
+              key={index}
+              className='mi-dropdown-option'
+              style={{ textAlign: align }}
+              onClick={() => {
+                handleClick && handleClick(item);
+              }}
+            >
               {item.label}
             </div>
           );
