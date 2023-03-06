@@ -1,5 +1,5 @@
 {
-  "name": "ui",
+  "name": "gjl-test-ui",
   "version": "1.0.0",
   "description": "a react ui libiary.",
   "author": "Junlingon",
@@ -7,13 +7,17 @@
     "type": "git",
     "url": "git+https://github.com/Junlingon/ui.git"
   },
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "webpack-dev-server --config ./docs/webpack.config.js --mode development",
     "build": "webpack --config webpack.config.js",
     "prepare": "husky install",
     "fix": "eslint src/**/*.*  --fix"
   },
+  "main": "lib/ui.js",
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "@tippyjs/react": "^4.2.6",
     "autoprefixer": "^10.4.13",
@@ -21,6 +25,7 @@
     "canvas-confetti": "^1.6.0",
     "classnames": "^2.3.2",
     "css-loader": "^6.7.3",
+    "css-minimizer-webpack-plugin": "^4.2.2",
     "i18next": "^22.4.10",
     "i18next-browser-languagedetector": "^7.0.1",
     "less": "^4.1.3",
